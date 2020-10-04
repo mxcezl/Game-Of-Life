@@ -1,8 +1,3 @@
-// Mail à envoyer le TP :
-// david.dupont1234@gmail.com
-//
-// Maxence Zolnieruck
-
 import javafx.animation.FillTransition;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -32,27 +27,27 @@ public class Cellule {
 	
 	/* ------------------------------ Methodes ----------------------------------- */
 	
-	/* change la valeur de la cellule par rapport à son voisinage
-	On prendra un monde sphérique. ’taille’ étant la dimension de la grille carrée,
-	la case en haut à gauche de la case (0,0) est la case (taille-1, taille-1).
+	/* change la valeur de la cellule par rapport Ã  son voisinage
+	On prendra un monde sphÃ©rique. â€™tailleâ€™ Ã©tant la dimension de la grille carrÃ©e,
+	la case en haut Ã  gauche de la case (0,0) est la case (taille-1, taille-1).
 	*/
 	public void evoluer() {
 		
         int nbCellAlive = 0; // Nombre de cellules actives autour de la cellule courante
         int tailleMat = this.getGrille().length; // Taille de la matrice
         
-        // Check l'état des cellules autour de la cellule courante
+        // Check l'Ã©tat des cellules autour de la cellule courante
         for (int i = -1; i <= 1; i++) { // i = -1, 0, 1
         	
-        	int xFormated = ((this.getX() + i) + tailleMat) % tailleMat; // Pour pas que le x dépasse la taille du tableau
+        	int xFormated = ((this.getX() + i) + tailleMat) % tailleMat; // Pour pas que le x dÃ©passe la taille du tableau
         	
             for (int j = -1; j <= 1; j++) { // j = -1, 0 ,1
             	
-                if (i == 0 && j == 0) { // On vérifie pas notre cellule
+                if (i == 0 && j == 0) { // On vÃ©rifie pas notre cellule
                     continue;  // Passe a la valeur j suivante direcetement
                 }
                 
-                int yFormated = ((y + j) + tailleMat) % tailleMat; // Pour pas que le y dépasse la taille du tableau
+                int yFormated = ((y + j) + tailleMat) % tailleMat; // Pour pas que le y dÃ©passe la taille du tableau
                 if (this.grille[xFormated][yFormated].vivante) { // Si la cellule a verifier est vivante
                 	nbCellAlive++; // Alors on ajoute 1 au nombre de cellules actives autour de la matrice
                 }
@@ -70,11 +65,11 @@ public class Cellule {
             }
         }
         
-        // On change la couleur en conscéquences
+        // On change la couleur en conscÃ©quences
         this.changerCouleur();
 	}
 	
-	// Permet de tuer la cellule (utilisé pour clear toute la grille)
+	// Permet de tuer la cellule (utilisÃ© pour clear toute la grille)
     public void clear() {
         this.setVivante(false);
         this.setNextEtat(false);
@@ -109,7 +104,7 @@ public class Cellule {
         new FillTransition(Duration.millis(100), this.getCercle(), (Color) this.getCercle().getFill(), c).play();
     }
     
-    // On passe a l'état suivant
+    // On passe a l'Ã©tat suivant
     public void nextGen() {
     	this.setVivante(this.nextEtat);
     }
