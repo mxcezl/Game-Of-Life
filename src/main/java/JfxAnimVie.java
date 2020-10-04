@@ -64,7 +64,7 @@ public class JfxAnimVie extends Application {
 		primaryStage.show();
 	  
 		// Compteur de generation
-		Label compteur = new Label("Generations :" + this.nbGen);
+		Label compteur = new Label("Generations : " + this.nbGen);
 		compteur.setTextFill(Color.WHITE);
 		root.getChildren().add(compteur);
 		
