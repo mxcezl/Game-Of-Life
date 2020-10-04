@@ -1,8 +1,3 @@
-// Mail à envoyer le TP :
-// david.dupont1234@gmail.com
-//
-// Maxence Zolnieruck
-
 public class Matrice {
 	
 	private int taille;
@@ -34,7 +29,7 @@ public class Matrice {
 			}
 		}
 		
-		// On recopie la grille initialisée dans l'ancienne grille
+		// On recopie la grille initialisÃ©e dans l'ancienne grille
 		this.copieGrilles();
 	}
 
@@ -42,14 +37,14 @@ public class Matrice {
 	// Recopie grille dans ancienne grille
 	public void copieGrilles() {
 		
-		// Avec un for x, y car on a besoin des index pour acceder au même element des deux grilles
+		// Avec un for x, y car on a besoin des index pour acceder au mÃªme element des deux grilles
 		for(int i = 0; i < this.getGrille().length; i++)
 			  for(int j = 0; j < this.getGrille()[i].length; j++)
 			    this.getGrilleAncienne()[i][j] = this.getGrille()[i][j]; // Copie element par element
 	}
 	
 	
-	// Active densité de cellule dans la grille
+	// Active densitÃ© de cellule dans la grille
 	public void initHasard() {
 		for (Cellule[] lineCellule : this.getGrille()) {
 			for (Cellule cellule : lineCellule) {
@@ -77,7 +72,7 @@ public class Matrice {
     }
     
     
-	// Demande à chaque cellule d’évoluer
+	// Demande Ã  chaque cellule dâ€™Ã©voluer
 	public void animGrille() {
         for (Cellule[] lineCellule : this.getGrille()) {
             for (Cellule cellule : lineCellule) {
