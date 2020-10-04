@@ -1,8 +1,3 @@
-// Mail à envoyer le TP :
-// david.dupont1234@gmail.com
-//
-// Maxence Zolnieruck
-
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -19,7 +14,7 @@ public class JfxAnimVie extends Application {
 	/**matrice liee a cet objet graphique*/
 	Matrice matrice;
  
-	/**elements graphiques représentant les cellules*/
+	/**elements graphiques reprÃ©sentant les cellules*/
 	public static Circle[][] circles;
  
 	/**taille d'une cellule en pixel*/
@@ -31,10 +26,10 @@ public class JfxAnimVie extends Application {
 	/**nombre de celluls initialement actives*/
 	private double densite;
  
-	/**délai en ms entre chaque évolution*/
+	/**dÃ©lai en ms entre chaque Ã©volution*/
 	private int tempo;
  
-	/** nombre de generations generés*/
+	/** nombre de generations generÃ©s*/
 	private int nbGen = 0;
 	
 	@Override
@@ -78,12 +73,12 @@ public class JfxAnimVie extends Application {
 				event-> { // Pour chaque cycle de (tempo) millisecondes, on fait :
 					this.matrice.nextGen(); // 1 - Calculer la prochaine generation
 					this.matrice.animGrille(); // 2 - Afficher la grille en conscequences
-					compteur.setText("Generations :" + ++this.nbGen); // 3 - Affiche le nombre de generations et incrémente ce nombre
+					compteur.setText("Generations :" + ++this.nbGen); // 3 - Affiche le nombre de generations et incrÃ©mente ce nombre
 				}));
 		littleCycle.setCycleCount(Timeline.INDEFINITE);
 		littleCycle.play();
 		
-		// Des qu'un touche est relachée
+		// Des qu'un touche est relachÃ©e
         scene.setOnKeyReleased(key -> {
             switch (key.getText().toLowerCase()) {
             	case "d": // Si c'est la touche D, on joue l'animation
